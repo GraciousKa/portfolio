@@ -3,178 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracious Kamwenje - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="menu">
-    <style>
-        /* Dark theme styling */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #1a1a1a;
-            color: #f3f3f3;
-            scroll-behavior: smooth;
-        }
-
-        /* Navigation styling */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: rgba(0,0,0,0.5);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        /* Hero section styling */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-        }
-
-        /* Contact form styling */
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-        }
-
-        /* Form input styling */
-        .form-group {
-            margin: 1.5rem 0;
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    <title>Susana's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="brand">Gracious Kamwenje</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger" id="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <h1>Gracious Kamwenje</h1>
-        <h3>Full-Stack Developer & Tech Enthusiast</h3>
-        <a href="#about" class="btn">Learn More</a>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>Passionate developer with experience in JavaScript, Python, and React...</p>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2>Skills</h2>
-        <div class="skill-bars">
-            <div class="bar javascript">
-                <div class="progress-line"></div>
-                <div class="skill-name">JavaScript</div>
-                <div class="percentage">90%</div>
-            </div>
-            <!-- Add other skills -->
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>Recent Projects</h2>
-        <div class="project-grid">
-            <!-- Add project cards -->
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2>Get In Touch</h2>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn submit-btn">Send Message</button>
-                <div id="status"></div>
-            </form>
-        </div>
-    </section>
-
-    <!--Particles.js Background-->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <header>
+        <h1>Susana's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
-    <script>
-        //_particles.js config
-        particlesJS.load('hero', 'particles.json', function() {});
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Toggle menu
-        const burger = document.getElementById('burger');
-        burger.addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('nav-active');
-            burger.classList.toggle('burger-active');
-        });
-
-        // Form submission with EmailJS
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const loading = document.getElementById('status');
-            loading.textContent = 'Sending...';
-
-            emailjs.sendForm('service_yourID', 'template_yourID', this)
-                .then(() => {
-                    loading.textContent = 'Message Sent!';
-                    this.reset();
-                }, (error) => {
-                    loading.textContent = 'Error: ' + error.text;
-                });
-        });
-    </script>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Experienced Software Developer and Graphic Designer with expertise in Java, Python, Django, PHP, HTML, CSS, and more.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming: Java, Python, C++, PHP, JavaScript</li>
+            <li>Database Management: SQL, Apache, SQLite</li>
+            <li>Web Development: HTML, CSS, JavaScript</li>
+            <li>Networking: Cisco Networking</li>
+            <li>Graphic Design: Adobe Suite, Corel Draw</li>
+            <li>Software Development: Mobile and Desktop Applications</li>
+            <li>IT Support: System Maintenance and Troubleshooting</li>
+        </ul>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Library Website</h3>
+            <p>Developed an online university library system for book storage and management.</p>
+        </div>
+        <div class="project">
+            <h3>Accounting Software</h3>
+            <p>Built an accounting software similar to Siege with data stored on a local Windows Server 2012R.</p>
+        </div>
+        <div class="project">
+            <h3>Bookshop Desktop Application</h3>
+            <p>Created a bookshop desktop application with sales tracking and printer connectivity, similar to Odoo software.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: susana@example.com</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/susana</a></p>
+    </section>
+    
+    <script src="script.js"></script>
 </body>
 </html>
